@@ -119,39 +119,39 @@
 \typeout{warning: your acro package is too old (<2.0)}
 }%
 \makeatother
-\ifnewacro% show footnotes only once
-    \ExplSyntaxOn%
-    \RenewAcroCommand\ac%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_use:n {#1}
-      }
-    \RenewAcroCommand\Ac%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_first_upper:
-        \acro_use:n {#1}
-      }
-    \NewAcroCommand\aclu%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_long:n {#1}
-      }
-    \NewAcroCommand\Aclu%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_first_upper:
-        \acro_long:n {#1}
-      }
-    \ExplSyntaxOff%
-\else
+%\ifnewacro% show footnotes only once
+%    \ExplSyntaxOn%
+%    \RenewAcroCommand\ac%
+%      {
+%        \acro_if_acronym_used:nF {#1}
+%          { \acrousefootnotetrue\acro_cite: }
+%        \acro_use:n {#1}
+%      }
+%    \RenewAcroCommand\Ac%
+%      {
+%        \acro_if_acronym_used:nF {#1}
+%          { \acrousefootnotetrue\acro_cite: }
+%        \acro_first_upper:
+%        \acro_use:n {#1}
+%      }
+%    \NewAcroCommand\aclu%
+%      {
+%        \acro_if_acronym_used:nF {#1}
+%          { \acrousefootnotetrue\acro_cite: }
+%        \acro_long:n {#1}
+%      }
+%    \NewAcroCommand\Aclu%
+%     {
+%        \acro_if_acronym_used:nF {#1}
+%          { \acrousefootnotetrue\acro_cite: }
+%        \acro_first_upper:
+%        \acro_long:n {#1}
+%      }
+%    \ExplSyntaxOff%
+%\else
     \newcommand{\aclu}[1]{\acs{#1}}
     \newcommand{\Aclu}[1]{\Acs{#1}}
-\fi
+%\fi
 % ------------------------------------------------------------------------------
 
 
